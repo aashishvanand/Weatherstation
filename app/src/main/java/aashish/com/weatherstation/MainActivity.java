@@ -1,8 +1,12 @@
 package aashish.com.weatherstation;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Request;
@@ -18,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
             latitude_textview,longitude_textview,altitude_textview,lightintensity_textview,co2_textview,rainfall_textview,
             lastupdated_textview;
     String temperature,pressure,seapressure,humidity,latitude,longitude,altitude,lightintensity,co2,rainfall,lastupdated;
+    CardView compass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
         co2_textview = (TextView) findViewById(R.id.co2);
         rainfall_textview = (TextView) findViewById(R.id.rainfall);
         lastupdated_textview = (TextView) findViewById(R.id.lastupdated);
+        compass = (CardView) findViewById(R.id.compass);
+
+        compass.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String coordinates = String.format("geo:0,0?q=" + latitude + "," + longitude);
+                Intent intentMap = new Intent( Intent.ACTION_VIEW, Uri.parse(coordinates) );
+                startActivity( intentMap );
+            }
+        });
 
     }
 
