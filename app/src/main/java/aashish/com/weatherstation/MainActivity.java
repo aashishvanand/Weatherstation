@@ -90,17 +90,20 @@ public class MainActivity extends AppCompatActivity {
                         rainfall = jObj.getString("rainfall");
                         lastupdated = jObj.getString("lastupdated");
 
-                        temperature_textview.setText("Temperature :" + temperature + "°C");
-                        pressure_textview.setText("Pressure :" + pressure + "Pa");
-                        seapressure_textview.setText("Sea Pressure :" + seapressure + "Pa");
-                        humidity_textview.setText("Humidity :" + humidity + "%");
-                        latitude_textview.setText("Latitude :" + latitude + " ");
-                        longitude_textview.setText("Longitude :" + longitude + "");
-                        altitude_textview.setText("Altitude :" + altitude + "m");
-                        lightintensity_textview.setText("Lightintensity :" + lightintensity +"lx");
-                        co2_textview.setText("Co2 :" + co2 + "ppm");
-                        rainfall_textview.setText("Rainfall :" + rainfall + "cm");
-                        lastupdated_textview.setText("last Updated :" + lastupdated + " ");
+                        temperature_textview.setText("Temperature " + temperature + " °C");
+                        pressure_textview.setText("Atm " + pressure + " Pa");
+                        seapressure_textview.setText("Sea " + seapressure + " Pa");
+                        humidity_textview.setText("Humidity " + humidity + "%");
+                        latitude_textview.setText("Latitude " + latitude);
+                        longitude_textview.setText("Longitude " + longitude);
+                        altitude_textview.setText("Altitude " + altitude + " m");
+                        //lightintensity_textview.setText("Lightintensity :" + lightintensity +"lx");
+                        //co2_textview.setText("Co2 :" + co2 + "ppm");
+                        //rainfall_textview.setText("Rainfall :" + rainfall + "cm");
+                        lightintensity_textview.setText("Coming Soon");
+                        co2_textview.setText("Coming Soon");
+                        rainfall_textview.setText("Coming Soon");
+                        lastupdated_textview.setText("Updated " + lastupdated);
 
 
                     } else {

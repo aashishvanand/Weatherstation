@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Weatherstation</string>
     <string name="sample">sample</string>
+    <string name="pressure_name">Pressure</string>
 </resources>
