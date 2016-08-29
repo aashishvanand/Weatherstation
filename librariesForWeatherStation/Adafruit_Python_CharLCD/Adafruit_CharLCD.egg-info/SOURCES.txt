@@ -1,0 +1,8 @@
+setup.py
+Adafruit_CharLCD/Adafruit_CharLCD.py
+Adafruit_CharLCD/__init__.py
+Adafruit_CharLCD.egg-info/PKG-INFO
+Adafruit_CharLCD.egg-info/SOURCES.txt
+Adafruit_CharLCD.egg-info/dependency_links.txt
+Adafruit_CharLCD.egg-info/requires.txt
+Adafruit_CharLCD.egg-info/top_level.txt
