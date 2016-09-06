@@ -98,23 +98,21 @@ The existing system gets the data from satellites and sends it to the remote ser
 ## The Python Script
 The python script Weather Station.py is the main script that runs in the python to send the data to the database, it recieves the data from the sensors and sends it to a php file in the server via HTTP POST, and the PhP file then sends the data to the database. Create a php code that reads data off the super global array $_POST[] and send the data to the mySQL or SQLite database. It is preferable to create a hosting account to take care of hostin your server side script. The best one I would reccommend is <a href="http://www.hostinger.in/">hostinger</a>, which has php and mySQL support by default. 
 <br>
-One more thing you need to do is to ensure that this code runs periodically as this code only sends data once, use <a href= "https://www.raspberrypi.org/documentation/linux/usage/cron.md">crontab</a> to automate this task. I would reccomend running this code for once in 15 or 30 minutes, any less will result in a very huge database with hardly an variation between neighbouring records.
-<br>
+One more thing you need to do is to ensure that this code runs periodically as this code only sends data once, use <a href= "https://www.raspberrypi.org/documentation/linux/usage/cron.md">crontab</a> to automate this task. I would reccomend running this code for once in 15 or 30 minutes, any less will result in a very huge database with hardly an variation between neighbouring records. <br>
 You need to modify the path in /Python/WeatherStation.py as per your server. You can run a local server in your raspberry pi and make it handle all the request or you can do it as in our case a dedicated wamp server to handle all the request.
 
 ## Android Application
 Download the application <a href="https://github.com/aashishvanand/Weatherstation/raw/master/WeatherStation.apk">here</a>.
-Modify its source to get the data from your server and build the apk using Android Studio. you can check out this gitlink directly into andorid studio.
-<br> The Android application displays the weather information the Pi records from its sorroundings. Clicking on the location card will open up Google Maps pointing to the location of the Weather Station , this information is recieved from the GPS Module
+Modify its source to get the data from your server and build the apk using Android Studio. you can check out this gitlink directly into andorid studio.<br>
+The Android application displays the weather information the Pi records from its sorroundings. Clicking on the location card will open up Google Maps pointing to the location of the Weather Station , this information is recieved from the GPS Module
 
 ##Php Script
-As you have the option to install a wamp server in raspberry pi its really easy to connect php with mysql in a raspberry pi or you can do it as in our case to make a request from the Python (Raspberry Pi) to the Dedicated Wamp Server to handle the request.
-You need to place the Php folder to your /etc/var/www/html/temperature/ <br>
-make sure to add the database parameters according to your databse db_location, db_user, db_password, db_name
-Php handles all the request to store all the values sent from the raspberry pi to database. It also is responsible for providing the values from the databse to android application
+As you have the option to install a wamp server in pi its really easy to connect PHP with MySQL in a pi or you can do it as in our case to make a request from the Python (Pi) to the Dedicated Wamp Server to handle the request.
+You need to place the Php folder to your /etc/var/www/html/temperature/ make sure to add the database parameters according to your database db_location, db_user, db_password, db_name <br>
+Php handles all the request to store all the values sent from the raspberry pi to database. It also is responsible for providing the values from the database to android application
 
 ##Database Creation
-We use MySql as our primary database this could be either in the same raspberry pi or as in our case a dedicated server to store the records. The create table command with the fields is listed down
-create table temperature( id int(11) primary key auto_increment,temperature varchar(10), pressure varchar(10),
+We use MySql as our primary database this could be either in the same raspberry pi or as in our case a dedicated server to store the records. The create table command with the fields is listed down <br>
+<b>create table temperature( id int(11) primary key auto_increment,temperature varchar(10), pressure varchar(10),
 seapressure varchar(10), humidity varchar(10), latitude varchar(10), longitude varchar(10),
-altitude varchar(10), lightintensity varchar(10), co2 varchar(10), rainfall varchar(10), time datetime);
+altitude varchar(10), lightintensity varchar(10), co2 varchar(10), rainfall varchar(10), time datetime);<b>
