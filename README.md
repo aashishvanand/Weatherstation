@@ -89,7 +89,7 @@ The existing system gets the data from satellites and sends it to the remote ser
     And reboot with <code> sudo reboot </code>
   </li>
   <li> Enter the code, <br>
-    <code> ssty -F /dev/ttyAMA0 raw 9600 cs8 clocal -cstopb </code>
+    <code> ssty -F /dev/ttyAMA0 raw 9600 cs8 clocal -cstopb </code> <br>
     <code> cat /dev/ttyAMA0 </code>
   </li>
   <li> Upon execution of the above command you should see running lines of output, we are only bothered about the line that starts with $GPRMC , if all that you see in this line is commas, then your reciever does not have a proper fix with the satellites, try moving the antenna around, and double check your connections</li>
