@@ -93,7 +93,7 @@ The existing system gets the data from satellites and sends it to the remote ser
     <code> cat /dev/ttyAMA0 </code>
   </li>
   <li> Upon execution of the above command you should see running lines of output, we are only bothered about the line that starts with $GPRMC , if all that you see in this line is commas, then your reciever does not have a proper fix with the satellites, try moving the antenna around, and double check your connections</li>
-<ol>
+</ol>
 
 ## The Python Script
 The python script Weather Station.py is the main script that runs in the python to send the data to the database, it recieves the data from the sensors and sends it to a php file in the server via HTTP POST, and the PhP file then sends the data to the database. Create a php code that reads data off the super global array $_POST[] and send the data to the mySQL or SQLite database. It is preferable to create a hosting account to take care of hostin your server side script. The best one I would reccommend is <a href="http://www.hostinger.in/">hostinger</a>, which has php and mySQL support by default. 
