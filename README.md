@@ -39,6 +39,7 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> Set the time zone of the system in Raspberry pi sudo raspi-config</li>
   <li> Run the udpate a few times sudo apt-get update </li>
   <li> Install the necessary softwares sudo apt-get install git-core python-dev python-pip python-smbus .These will come in handy later </li>
+  <li> Then reboot, sudo reboot </li>
 </ol>
 ## Preparing the Pi for DHT22 / DHT11
 <ol>
@@ -49,5 +50,20 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> sudo ./AdafruitDHT.py 2302 4 to run the example and check if the sensor is working or not</li>
 </ol>
 
-
-  
+## Preparing the Pi for BMP180
+<ol>
+  <li> The BMP Sernsors use I2C Communication Interface to communicate with the Raspberry Pi </li>
+  <li> sudo apt-get install python-smbus</li>
+  <li> sudo apt-get install i2c-tools </li>
+  <li> Run sudo raspi-config and follow the prompts to install i2c support for the ARM core and linux kernel</li>
+  <li> Then reboot, sudo reboot </li>
+  <li> When you are done, run sudo i2cdetect -y 0 (if you are using a version 1 Raspberry Pi)<br>
+  <li> sudo i2cdetect -y 1 (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br> Before plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/> <br> After plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/> <br> Notice the 77 ?</li>
+  <li> sudo apt-get update </li>
+  <li> sudo apt-get install git build-essential python-dev python-smbus </li>
+  <li> git clone https://github.com/adafruit/Adafruit_Python_BMP.git </li>
+  <li> cd Adafruit_Python_BMP </li>
+  <li> sudo python setup.py install </li>
+  <li> Once the installation is complete, cd examples <br>
+  sudo python simpletest.py<br> To check whether or not the sensor is working </li>
+</ol>
