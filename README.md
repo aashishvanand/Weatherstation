@@ -35,38 +35,38 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> Determine the IP Address of your Raspberry pi from the router and enter that IP Address as hostname in the Hostname text field in putty</li>
   <li> Connect to the Pi using putty, even if the connection refuses once or twice, its okay, try again, it will connect. </li>
   <li> The default username is "pi" and password is "raspberry", login to your pi using these credentials </li>
-  <li> Expand the file system  in Raspberry pi <code?sudo raspi-config</code> </li>
+  <li> Expand the file system  in Raspberry pi <code>sudo raspi-config</code> </li>
   <li> Set the time zone of the system in Raspberry pi <code>sudo raspi-config</code></li>
   <li> Run the udpate a few times <code>sudo apt-get update</code> </li>
   <li> Install the necessary softwares <code>sudo apt-get install git-core python-dev python-pip python-smbus</code> .These will come in handy later </li>
-  <li> Then reboot, sudo reboot </li>
+  <li> Then reboot, <code>sudo reboot</code> </li>
 </ol>
 ## Preparing the Pi for DHT22 / DHT11
 <ol>
-  <li> git clone https://github.com/adafruit/Adafruit_Python_DHT.git to clone the ADafruit DHT repository into your Pi</li>
-  <li> cd Adafruit_Python_DHT </li>
-  <li> sudo apt-get install build-essential python-dev python-openssl to install the necessary packages needed to install external python libraries</li>
-  <li> sudo python setup.py install to install the external library</li>
-  <li> sudo ./AdafruitDHT.py 2302 4 to run the example and check if the sensor is working or not</li>
+  <li> <code>git clone https://github.com/adafruit/Adafruit_Python_DHT.git</code> to clone the ADafruit DHT repository into your Pi</li>
+  <li> <code>cd Adafruit_Python_DHT</code> </li>
+  <li> <code>sudo apt-get install build-essential python-dev python-openssl</code> to install the necessary packages needed to install external python libraries</li>
+  <li> <code>sudo python setup.py install</code> to install the external library</li>
+  <li> <code>sudo ./AdafruitDHT.py 2302 4</code> to run the example and check if the sensor is working or not</li>
 </ol>
 
 ## Preparing the Pi for BMP180
 <ol>
   <li> The BMP Sernsors use I2C Communication Interface to communicate with the Raspberry Pi </li>
-  <li> sudo apt-get install python-smbus</li>
-  <li> sudo apt-get install i2c-tools </li>
-  <li> Run sudo raspi-config and follow the prompts to install i2c support for the ARM core and linux kernel</li>
-  <li> Then reboot, sudo reboot </li>
-  <li> When you are done, <br> run sudo i2cdetect -y 0 (if you are using a version 1 Raspberry Pi)
-  <br> sudo i2cdetect -y 1 (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br> Before plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/> <br> After plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/> <br> Notice the 77 ?</li>
+  <code> sudo apt-get install python-smbus</code>
+  <code> sudo apt-get install i2c-tools</code>
+  <li> Run <code>sudo raspi-config</code> and follow the prompts to install i2c support for the ARM core and linux kernel</li>
+  <li> Then reboot, <code>sudo reboot</code> </li>
+  <li> When you are done, <br> run <code>sudo i2cdetect -y 0</code> (if you are using a version 1 Raspberry Pi)
+  <br> <code>sudo i2cdetect -y 1</code> (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br> Before plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/> <br>After plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/><br><b>Notice the 77 ?</b></li>
   <li> Install the Adafruit Python Library <br>
-  <br> sudo apt-get update 
-  <br> sudo apt-get install git build-essential python-dev python-smbus 
-  <br> git clone https://github.com/adafruit/Adafruit_Python_BMP.git 
-  <br> cd Adafruit_Python_BMP 
-  <br> sudo python setup.py install </li>
+  <br> <code>sudo apt-get update</code> 
+  <br> <code>sudo apt-get install git build-essential python-dev python-smbus</code> 
+  <br> <code>git clone https://github.com/adafruit/Adafruit_Python_BMP.git</code> 
+  <br> <code>cd Adafruit_Python_BMP</code> 
+  <br> <code>sudo python setup.py install</code> </li>
   <li> Once the installation is complete <br> <code>cd examples</code> <br>
-  sudo python simpletest.py<br> To check whether or not the sensor is working </li>
+  <code>sudo python simpletest.py</code><br> To check whether or not the sensor is working </li>
 </ol>
 
 
