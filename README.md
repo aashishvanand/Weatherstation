@@ -65,7 +65,7 @@ The existing system gets the data from satellites and sends it to the remote ser
   <br> git clone https://github.com/adafruit/Adafruit_Python_BMP.git 
   <br> cd Adafruit_Python_BMP 
   <br> sudo python setup.py install </li>
-  `<li> Once the installation is complete <br> cd examples <br>`
+  <li> Once the installation is complete <br> <code>cd examples</code> <br>
   sudo python simpletest.py<br> To check whether or not the sensor is working </li>
 </ol>
 
