@@ -24,7 +24,8 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> Local SQL server [ensure static IP and DNS registration] or a web hosting  account that has SQL</li>
   <li> Android Phone </li>
 </ul>
-
+##Circuit Diagram
+<img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/>
 ## Pre Connection Procedure
 <ol>
   <li> Flash the <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian Jessie OS</a> into the MicroSD card of your Raspberry Pi using the <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> Software</li>
@@ -41,7 +42,12 @@ The existing system gets the data from satellites and sends it to the remote ser
 </ol>
 ## Preparing the Pi for DHT22 / DHT11
 <ol>
-  <li>
+  <li> git clone https://github.com/adafruit/Adafruit_Python_DHT.git to clone the ADafruit DHT repository into your Pi</li>
+  <li> cd Adafruit_Python_DHT </li>
+  <li> sudo apt-get install build-essential python-dev python-openssl to install the necessary packages needed to install external python libraries</li>
+  <li> sudo python setup.py install to install the external library</li>
+  <li> sudo ./AdafruitDHT.py 2302 4 to run the example and check if the sensor is working or not</li>
+</ol>
 
 
   
