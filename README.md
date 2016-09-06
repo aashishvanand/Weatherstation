@@ -24,8 +24,10 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> Local SQL server [ensure static IP and DNS registration] or a web hosting  account that has SQL</li>
   <li> Android Phone </li>
 </ul>
+
 ## Circuit Diagram
 <img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/>
+
 ## Pre Connection Procedure
 <ol>
   <li> Flash the <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian Jessie OS</a> into the MicroSD card of your Raspberry Pi using the <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> Software</li>
@@ -41,8 +43,10 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> Install the necessary softwares <code>sudo apt-get install git-core python-dev python-pip python-smbus</code> .These will come in handy later </li>
   <li> Then reboot, <code>sudo reboot</code> </li>
 </ol>
+
 ## Preparing the Pi for DHT22 / DHT11
 <ol>
+  <li> Connect the sensor to the Pi as shown in the circuit diagram </li>
   <li> <code>git clone https://github.com/adafruit/Adafruit_Python_DHT.git</code> to clone the ADafruit DHT repository into your Pi</li>
   <li> <code>cd Adafruit_Python_DHT</code> </li>
   <li> <code>sudo apt-get install build-essential python-dev python-openssl</code> to install the necessary packages needed to install external python libraries</li>
@@ -52,6 +56,7 @@ The existing system gets the data from satellites and sends it to the remote ser
 
 ## Preparing the Pi for BMP180
 <ol>
+  <li> Connect the sensor to the Pi as shown in the circuit diagram </li>
   <li> The BMP Sernsors use I2C Communication Interface to communicate with the Raspberry Pi </li>
   <code> sudo apt-get install python-smbus</code><br>
   <code> sudo apt-get install i2c-tools</code>
@@ -69,5 +74,25 @@ The existing system gets the data from satellites and sends it to the remote ser
   <code>sudo python simpletest.py</code><br> To check whether or not the sensor is working </li>
 </ol>
 
+## Preparing the GPS Reciever
+<ol>
+  <li> Connect the GPS antenna to the GPS Reciever</li>
+  <li> Connect power to the GPS Reciever, and ensure to set it to the right power setting </li>
+  <li> Esnure the GPS Reciever has a proper FIX to the satellites, different recievers indicate this in a different way. Mine has the status LED blinkng </li>
+  <li> Once connected, run the following command
+    <br><code> sudo nano /boot/cmdline.txt</code>
+    <br> and remove <i>console=ttyAMA0,115200</i> and also if it is there remove <i>kgdboc=ttyAMA0,115200</i>
+  </li>
+  <li>Enter the following code, <br>
+    <code> sudo systemctl stop serial-gettty@ttyAMA0.service</code><br>
+    <code> sudo systemctl disable serial-gettty@ttyAMA0.service </code> <br>
+    And reboot with <code> sudo reboot </code>
+  </li>
+  <li> Enter the code, <br>
+    <code> ssty -F /dev/ttyAMA0 raw 9600 cs8 clocal -cstopb </code>
+    <code> cat /dev/ttyAMA0 </code>
+  </li>
+  <li> Upon execution of the above command you should see running lines of output, we are only bothered about the line that starts with $GPRMC , if all that you see in this line is commas, then your reciever does not have a proper fix with the satellites, try moving the antenna around, and double check your connections</li>
+<ol>
 
-
+<ol>
