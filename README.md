@@ -35,10 +35,10 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> Determine the IP Address of your Raspberry pi from the router and enter that IP Address as hostname in the Hostname text field in putty</li>
   <li> Connect to the Pi using putty, even if the connection refuses once or twice, its okay, try again, it will connect. </li>
   <li> The default username is "pi" and password is "raspberry", login to your pi using these credentials </li>
-  <li> Expand the file system  in Raspberry pi sudo raspi-config </li>
-  <li> Set the time zone of the system in Raspberry pi sudo raspi-config</li>
-  <li> Run the udpate a few times sudo apt-get update </li>
-  <li> Install the necessary softwares sudo apt-get install git-core python-dev python-pip python-smbus .These will come in handy later </li>
+  <li> Expand the file system  in Raspberry pi <code?sudo raspi-config</code> </li>
+  <li> Set the time zone of the system in Raspberry pi <code>sudo raspi-config</code></li>
+  <li> Run the udpate a few times <code>sudo apt-get update</code> </li>
+  <li> Install the necessary softwares <code>sudo apt-get install git-core python-dev python-pip python-smbus</code> .These will come in handy later </li>
   <li> Then reboot, sudo reboot </li>
 </ol>
 ## Preparing the Pi for DHT22 / DHT11
