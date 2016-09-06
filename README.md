@@ -109,10 +109,10 @@ The Android application displays the weather information the Pi records from its
 ##Php Script
 As you have the option to install a wamp server in pi its really easy to connect PHP with MySQL in a pi or you can do it as in our case to make a request from the Python (Pi) to the Dedicated Wamp Server to handle the request.
 You need to place the Php folder to your /etc/var/www/html/temperature/ make sure to add the database parameters according to your database db_location, db_user, db_password, db_name <br>
-Php handles all the request to store all the values sent from the raspberry pi to database. It also is responsible for providing the values from the database to android application
+Php handles all the request to store all the values sent from the raspberry pi to database. It also is responsible for providing the values from the database to android application. If any Doubts in setting up a wamp server <a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu"/> should help you.
 
 ##Database Creation
-We use MySql as our primary database this could be either in the same raspberry pi or as in our case a dedicated server to store the records. The create table command with the fields is listed down <br>
+We use MySql as our primary database this could be either in the same pi that records the temperature or as in our case a dedicated server to store the records. The create table command with the fields is listed down <br>
 <b>create table temperature( id int(11) primary key auto_increment,temperature varchar(10), pressure varchar(10),
 seapressure varchar(10), humidity varchar(10), latitude varchar(10), longitude varchar(10),
 altitude varchar(10), lightintensity varchar(10), co2 varchar(10), rainfall varchar(10), time datetime);<b>
