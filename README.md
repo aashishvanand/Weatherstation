@@ -59,11 +59,12 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> Then reboot, sudo reboot </li>
   <li> When you are done, run sudo i2cdetect -y 0 (if you are using a version 1 Raspberry Pi)<br>
   <li> sudo i2cdetect -y 1 (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br> Before plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/> <br> After plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/> <br> Notice the 77 ?</li>
-  <li> sudo apt-get update </li>
-  <li> sudo apt-get install git build-essential python-dev python-smbus </li>
-  <li> git clone https://github.com/adafruit/Adafruit_Python_BMP.git </li>
-  <li> cd Adafruit_Python_BMP </li>
-  <li> sudo python setup.py install </li>
+  <li> Install the Adafruit Python Library <br>
+  <li> sudo apt-get update 
+  <br> sudo apt-get install git build-essential python-dev python-smbus 
+  <br> git clone https://github.com/adafruit/Adafruit_Python_BMP.git 
+  <br> cd Adafruit_Python_BMP 
+  <br> sudo python setup.py install </li>
   <li> Once the installation is complete, cd examples <br>
   sudo python simpletest.py<br> To check whether or not the sensor is working </li>
 </ol>
