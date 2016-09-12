@@ -68,6 +68,7 @@ Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open
   <li> When you are done,run <br>  <code>sudo i2cdetect -y 0</code> (if you are using a version 1 Raspberry Pi)
   <br> <code>sudo i2cdetect -y 1</code> (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output 
   <br><br><b> Before plugging in the sensor</b><br><br>
+  <img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/Weather%20Station_bb.jpg"/>
   <img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/beforeBMP.PNG"/>
   <br><br><b>After plugging in the sensor</b><br><br>
   <img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/afterBMP.png"/>
