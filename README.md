@@ -66,7 +66,7 @@ Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open
   <li> Run <code>sudo raspi-config</code> and follow the prompts to install i2c support for the ARM core and linux kernel</li>
   <li> Then reboot, <code>sudo reboot</code> </li>
   <li> When you are done,run <br>  <code>sudo i2cdetect -y 0</code> (if you are using a version 1 Raspberry Pi)
-  <br> <code>sudo i2cdetect -y 1</code> (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br><br><b> Before plugging in the sensor</b><br><br><img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/beforeBMP.PNG" height=100 width=100/><br><br><b>After plugging in the sensor</b><br><br><img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/afterBMP.png"/><br><b>Notice the 77 ?</b></li>
+  <br> <code>sudo i2cdetect -y 1</code> (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br><br><b> Before plugging in the sensor</b><br><br><img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/beforeBMP.PNG"/><br><br><b>After plugging in the sensor</b><br><br><img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/afterBMP.png"/><br><b>Notice the 77 ?</b><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/></li>
   <li> Install the Adafruit Python Library <br>
   <br> <code>sudo apt-get update</code> 
   <br> <code>sudo apt-get install git build-essential python-dev python-smbus</code> 
@@ -107,7 +107,8 @@ You need to modify the path in /Python/WeatherStation.py as per your server. You
 ## Android Application
 Download the application <a href="https://github.com/aashishvanand/Weatherstation/raw/master/WeatherStation.apk">here</a>.
 Modify its source to get the data from your server and build the apk using Android Studio. you can check out this gitlink directly into andorid studio.<br>
-The Android application displays the weather information the Pi records from its sorroundings. Clicking on the location card will open up Google Maps pointing to the location of the Weather Station , this information is recieved from the GPS Module
+The Android application displays the weather information the Pi records from its sorroundings. Clicking on the location card will open up Google Maps pointing to the location of the Weather Station , this information is recieved from the GPS Module<br>
+
 
 ##Php Script
 As you have the option to install a wamp server in pi its really easy to connect PHP with MySQL in a pi or you can do it as in our case to make a request from the Python (Pi) to the Dedicated Wamp Server to handle the request.
