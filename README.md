@@ -107,7 +107,15 @@ You need to modify the path in /Python/WeatherStation.py as per your server. You
 ## Android Application
 Download the application <a href="https://github.com/aashishvanand/Weatherstation/raw/master/WeatherStation.apk">here</a>.
 Modify its source to get the data from your server and build the apk using Android Studio. you can check out this gitlink directly into andorid studio.<br>
-The Android application displays the weather information the Pi records from its sorroundings. Clicking on the location card will open up Google Maps pointing to the location of the Weather Station , this information is recieved from the GPS Module<br>
+The Android application displays the weather information the Pi records from its sorroundings. Clicking on the location card will open up Google Maps pointing to the location of the Weather Station , this information is recieved from the GPS Module
+<br>
+<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/app1.png" height=480 width =270/>
+<br>
+<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/app2.png" height=480 width =270/>
+<br>
+This happens when you click on the location tile.
+<br>
+<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/locationClick.png" height=480 width =270/>
 
 
 ##Php Script
