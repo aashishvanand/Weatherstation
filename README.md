@@ -117,7 +117,7 @@ The Android application displays the weather information the Pi records from its
 <br>
 This happens when you click on the location tile.
 <br>
-<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/locationClick.PNG" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/localtionClick.PNG" height=480 width =270/>
 
 
 ##Php Script
