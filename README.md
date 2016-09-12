@@ -57,7 +57,7 @@ Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open
   <li> <code>sudo ./AdafruitDHT.py 2302 4</code> to run the example and check if the sensor is working or not</li>
 </ol>
 
-## Preparing the Pi for BMP180
+## Preparing the Pi for BMP180 / BMP085
 <ol>
   <li> Connect the sensor to the Pi as shown in the circuit diagram </li>
   <li> The BMP Sernsors use I2C Communication Interface to communicate with the Raspberry Pi </li>
@@ -66,7 +66,12 @@ Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open
   <li> Run <code>sudo raspi-config</code> and follow the prompts to install i2c support for the ARM core and linux kernel</li>
   <li> Then reboot, <code>sudo reboot</code> </li>
   <li> When you are done,run <br>  <code>sudo i2cdetect -y 0</code> (if you are using a version 1 Raspberry Pi)
-  <br> <code>sudo i2cdetect -y 1</code> (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br> Before plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/> <br>After plugging in the sensor <br><img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/><br><b>Notice the 77 ?</b></li>
+  <br> <code>sudo i2cdetect -y 1</code> (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output 
+  <br><br><b> Before plugging in the sensor</b><br><br>
+  <img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/beforeBMP.PNG"/>
+  <br><br><b>After plugging in the sensor</b><br><br>
+  <img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/afterBMP.png"/>
+  <br><b>Notice the 77 ?</b></li>
   <li> Install the Adafruit Python Library <br>
   <br> <code>sudo apt-get update</code> 
   <br> <code>sudo apt-get install git build-essential python-dev python-smbus</code> 
