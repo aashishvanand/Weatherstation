@@ -27,7 +27,7 @@ The existing system gets the data from satellites and sends it to the remote ser
 </ul>
 
 ## Circuit Diagram
-Download Fritzing from <a href="">here</a> and open the <a href=" ">Fritzing project</a> to have a better idea about the connections.<br><b>FULL DISCLAIMER</b> The GPS Reciever used here is not the same as used in the real project, its for indication only, but even this should work fine, as the GPS tutorial is pretty much the same for any reciever.
+Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open the <a href="https://github.com/aashishvanand/Weatherstation/blob/master/Weather%20Station.fzz">Fritzing project</a> to have a better idea about the connections.<br><b>FULL DISCLOSURE</b> The GPS Reciever used here is not the same as used in the real project, its for indication only, but even this should work fine, as the GPS tutorial is pretty much the same for any reciever.
 
 <img src="https://raw.githubusercontent.com/aashishvanand/Flick/master/Screenshots/Screenshot_20160322-120905.png" height=480 width =270/>
 
