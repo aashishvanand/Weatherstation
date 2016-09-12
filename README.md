@@ -29,7 +29,7 @@ The existing system gets the data from satellites and sends it to the remote ser
 ## Circuit Diagram
 Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open the <a href="https://github.com/aashishvanand/Weatherstation/blob/master/Weather%20Station.fzz">Fritzing project</a> to have a better idea about the connections.<br><b>FULL DISCLOSURE</b> The GPS Reciever used here is not the same as used in the real project, its for indication only, but even this should work fine, as the GPS tutorial is pretty much the same for any reciever.
 
-<img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/Weather%20Station_bb.jpg"/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/Weather%20Station_bb.jpg"/>
 
 ## Pre Connection Procedure
 <ol>
@@ -66,7 +66,9 @@ Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open
   <li> Run <code>sudo raspi-config</code> and follow the prompts to install i2c support for the ARM core and linux kernel</li>
   <li> Then reboot, <code>sudo reboot</code> </li>
   <li> When you are done,run <br>  <code>sudo i2cdetect -y 0</code> (if you are using a version 1 Raspberry Pi)
-  <br> <code>sudo i2cdetect -y 1</code> (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br><br><b> Before plugging in the sensor</b><br><br><img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/beforeBMP.PNG"/><br><br><b>After plugging in the sensor</b><br><br><img src="https://github.com/aashishvanand/Weatherstation/blob/master/Screenshots/afterBMP.png"/><br><b>Notice the 77 ?</b></li><br>
+  <br> <code>sudo i2cdetect -y 1</code> (if you are using a version 2 Raspberry Pi)<br> Once you give this , an address should show up the output <br><br><b> Before plugging in the sensor</b><br><br>
+  <img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/beforeBMP.PNG"/><br><br><b>After plugging in the sensor</b><br><br>
+  <img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/afterBMP.png"/><br><b>Notice the 77 ?</b></li><br>
   <li> Install the Adafruit Python Library <br>
   <br> <code>sudo apt-get update</code> 
   <br> <code>sudo apt-get install git build-essential python-dev python-smbus</code> 
@@ -105,17 +107,17 @@ One more thing you need to do is to ensure that this code runs periodically as t
 You need to modify the path in /Python/WeatherStation.py as per your server. You can run a local server in your raspberry pi and make it handle all the request or you can do it as in our case a dedicated wamp server to handle all the request.
 
 ## Android Application
-Download the application <a href="https://github.com/aashishvanand/Weatherstation/raw/master/WeatherStation.apk">here</a>.
+Download the application <a href="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/WeatherStation.apk">here</a>.
 Modify its source to get the data from your server and build the apk using Android Studio. you can check out this gitlink directly into andorid studio.<br>
 The Android application displays the weather information the Pi records from its sorroundings. Clicking on the location card will open up Google Maps pointing to the location of the Weather Station , this information is recieved from the GPS Module
 <br>
-<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/app1.png" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/app1.PNG" height=480 width =270/>
 <br>
-<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/app2.png" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/app2.PNG" height=480 width =270/>
 <br>
 This happens when you click on the location tile.
 <br>
-<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/locationClick.png" height=480 width =270/>
+<img src="https://raw.githubusercontent.com/aashishvanand/Weatherstation/master/Screenshots/locationClick.PNG" height=480 width =270/>
 
 
 ##Php Script
