@@ -113,6 +113,6 @@ Php handles all the request to store all the values sent from the raspberry pi t
 
 ##Database Creation
 We use MySql as our primary database this could be either in the same pi that records the temperature or as in our case a dedicated server to store the records. The create table command with the fields is listed down <br> <br>
-<b>create table temperature( id int(11) primary key auto_increment,temperature varchar(10), pressure varchar(10),
+<code>create table temperature( id int(11) primary key auto_increment,temperature varchar(10), pressure varchar(10),
 seapressure varchar(10), humidity varchar(10), latitude varchar(10), longitude varchar(10),
-altitude varchar(10), lightintensity varchar(10), co2 varchar(10), rainfall varchar(10), time datetime);<b>
+altitude varchar(10), lightintensity varchar(10), co2 varchar(10), rainfall varchar(10), time datetime);<code>
