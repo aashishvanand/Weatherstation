@@ -54,6 +54,7 @@ Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open
   <li> <code>cd Adafruit_Python_DHT</code> </li>
   <li> <code>sudo apt-get install build-essential python-dev python-openssl</code> to install the necessary packages needed to install external python libraries</li>
   <li> <code>sudo python setup.py install</code> to install the external library</li>
+  <li><code>cd examples</code></li>
   <li> <code>sudo ./AdafruitDHT.py 2302 4</code> to run the example and check if the sensor is working or not</li>
 </ol>
 
