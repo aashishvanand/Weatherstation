@@ -76,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
                     boolean error = jObj.getBoolean("error");
                     // Check for error node in json
                     if (!error) {
-                        // user successfully logged in
-                        // Now store the user in SQLite
                         temperature = jObj.getString("temperature");
                         pressure = jObj.getString("pressure");
                         seapressure = jObj.getString("seapressure");
@@ -97,12 +95,9 @@ public class MainActivity extends AppCompatActivity {
                         latitude_textview.setText("Latitude " + latitude);
                         longitude_textview.setText("Longitude " + longitude);
                         altitude_textview.setText("Altitude " + altitude + " m");
-                        //lightintensity_textview.setText("Lightintensity :" + lightintensity +"lx");
-                        //co2_textview.setText("Co2 :" + co2 + "ppm");
-                        //rainfall_textview.setText("Rainfall :" + rainfall + "cm");
-                        lightintensity_textview.setText("Coming Soon");
-                        co2_textview.setText("Coming Soon");
-                        rainfall_textview.setText("Coming Soon");
+                        lightintensity_textview.setText("Lightintensity" + lightintensity +"lx");
+                        co2_textview.setText("Co2 :" + co2 + "ppm");
+                        rainfall_textview.setText(rainfall);
                         lastupdated_textview.setText("Updated " + lastupdated);
 
 
