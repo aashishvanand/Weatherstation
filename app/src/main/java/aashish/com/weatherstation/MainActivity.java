@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
                         latitude_textview.setText("Latitude " + latitude);
                         longitude_textview.setText("Longitude " + longitude);
                         altitude_textview.setText("Altitude " + altitude + " m");
-                        lightintensity_textview.setText("Lightintensity" + lightintensity +"lx");
-                        co2_textview.setText("Co2 :" + co2 + "ppm");
+                        lightintensity_textview.setText("Light " + lightintensity +"lx");
+                        co2_textview.setText("Co2 " + co2 + "ppm");
                         rainfall_textview.setText(rainfall);
                         lastupdated_textview.setText("Updated " + lastupdated);
 
