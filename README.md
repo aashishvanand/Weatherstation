@@ -6,6 +6,7 @@ The existing system gets the data from satellites and sends it to the remote ser
 ## Components
 <ol>
   <li> Raspberry Pi B+ [or later]</li>
+  <li> Any Arduino board, using Uno here </li>
   <li> Gobbler </li>
   <li> Breadboard </li>
   <li> Connecting wires </li>
@@ -13,6 +14,11 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> BMP180 Sensor </li>
   <li> GPS Antenna </li>
   <li> GPS Reciever </li>
+  <li> Rain Detection board with control board. </li>
+  <li> LDR <li>
+  <li> 10K Ohm Resistor </li>
+  <li> MQ2 Gas Sensor [the one shown in Fritzing is to depict the connection, but not the exact sensor used]. </li>
+  <li> USB Cable for the Arduino Uno </li>
   <li> Power Source for Raspberry Pi </li>
   <li> Power Source for GPS Reciever</li>
   <li> An ethernet cable or a Wifi Module [USB ones work fine] </li>
@@ -46,7 +52,15 @@ Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open
   <li> Install the necessary softwares <code>sudo apt-get install git-core python-dev python-pip python-smbus</code> .These will come in handy later </li>
   <li> Then reboot, <code>sudo reboot</code> </li>
 </ol>
-
+## Preparing the Arduino
+<ol> 
+  <li>Make the connections as shown in the circuit diagram.</li>
+  <li> In your Arduino, upload the <a href="https://github.com/aashishvanand/Weatherstation/blob/master/ArduinoOfWeatherstation.ino">sketch</a> into your board, instructions for the same are <a href="https://drive.google.com/open?id=0B4ojjO5sVzx8Mk5iT2NQcFE4U0k"> here</a>.</li>
+  <li> Once the code is uploaded, plug the USB cable from your PC and connect it to the Raspberry Pi, make sure the other end is still connected to the Uno.</li>
+  <li> If you decide to change the Baud rate of the serial communication in the Arduino sketch, make sure to reflect the same change in the Python script that is going to run on the Pi as well [discussed later].</li>
+  <li> This part of the project reads the values from the analog sensors and sends that data to the Pi using serial communication over the USB cable that comes with the Uno</li>
+  <li> Once you plug the Arduino into the Pi, the Pi should be able to supply the power needed to the Pi over USB. Before plugging it in, in your Pi, give the command <code> ls /dev/tty* </code> and run the same command after plugging in the Arduino to the Pi and see which port is added, this is the port to which the Arduino is connected to the Pi, it is usually <i>ttyACM0</i> and it should not change technically. THIS IS FYI, you need not do anything with this information , will be useful for troubleshooting </li>
+</ol>
 ## Preparing the Pi for DHT22 / DHT11
 <ol>
   <li> Connect the sensor to the Pi as shown in the circuit diagram </li>
@@ -102,7 +116,7 @@ Download Fritzing from <a href="http://fritzing.org/download/">here</a> and open
 </ol>
 
 ## The Python Script
-The python script Weather Station.py is the main script that runs in the python to send the data to the database, it recieves the data from the sensors and sends it to a php file in the server via HTTP POST, and the PhP file then sends the data to the database. Create a php code that reads data off the super global array $_POST[] and send the data to the mySQL or SQLite database. It is preferable to create a hosting account to take care of hostin your server side script. The best one I would reccommend is <a href="http://www.hostinger.in/">hostinger</a>, which has php and mySQL support by default. 
+The python script Weather Station.py is the main script that runs in the python to send the data to the database, it recieves the data from the sensors and sends it to a php file in the server via HTTP POST, and the PhP file then sends the data to the database. Create a php code that reads data off the super global array $_POST[] and send the data to the mySQL or SQLite database. It is preferable to create a hosting account to take care of hosting your server side script. The best one we would reccommend is <a href="http://www.hostinger.in/">hostinger</a>, which has php and mySQL support by default. 
 <br>
 One more thing you need to do is to ensure that this code runs periodically as this code only sends data once, use <a href= "https://www.raspberrypi.org/documentation/linux/usage/cron.md">crontab</a> to automate this task. I would reccomend running this code for once in 15 or 30 minutes, any less will result in a very huge database with hardly an variation between neighbouring records. <br>
 You need to modify the path in /Python/WeatherStation.py as per your server. You can run a local server in your raspberry pi and make it handle all the request or you can do it as in our case a dedicated wamp server to handle all the request.
