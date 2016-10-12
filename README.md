@@ -15,7 +15,7 @@ The existing system gets the data from satellites and sends it to the remote ser
   <li> GPS Antenna </li>
   <li> GPS Reciever </li>
   <li> Rain Detection board with control board. </li>
-  <li> LDR <li>
+  <li> LDR </li>
   <li> 10K Ohm Resistor </li>
   <li> MQ2 Gas Sensor [the one shown in Fritzing is to depict the connection, but not the exact sensor used]. </li>
   <li> USB Cable for the Arduino Uno </li>
